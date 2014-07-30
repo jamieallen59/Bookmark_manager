@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Bookmark manager</title>
+		<title id="logo">Bookmark Manager</title>
+		<link href="/style.css" rel="stylesheet" type="text/css">
+		<link href="/reset.css" rel="stylesheet" type="text/css">
 	</head>
 
 	<body>
-		<%= partial :welcome_message %>
+		<%= partial :header %>
 		<%= partial :flash %>
 		<%= yield %>
 	</body>

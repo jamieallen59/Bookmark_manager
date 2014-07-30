@@ -2,6 +2,7 @@ require 'data_mapper'
 require 'sinatra'
 require 'rack-flash'
 require 'sinatra/partial'
+require 'rest-client'
 require_relative 'models/link'
 require_relative 'models/tag'
 require_relative 'models/user'
@@ -18,5 +19,5 @@ enable :sessions
 set :session_secret, 'super secret'
 use Rack::Flash
 set :partial_template_engine, :erb
-
+set :public_folder, Proc.new { File.join(root, "..", "public")}
 

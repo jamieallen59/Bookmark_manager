@@ -8,6 +8,7 @@ gem 'dm-postgres-adapter'
 gem 'bcrypt-ruby'
 gem 'rack-flash3'
 gem 'sinatra-partial'
+gem 'rest-client'
 
 group :development, :test do
 	gem "rspec"
