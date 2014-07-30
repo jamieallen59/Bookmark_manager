@@ -6,7 +6,7 @@ class User
 	include DataMapper::Resource
 
 	property :id, Serial
-	property :email, String
+	property :email, String, :unique => true, :message => "This email is already taken"
 	# this will store both the password and the salt
 	# It's Text and not String because String holds
 	# 50 characters by default
@@ -21,7 +21,8 @@ class User
 	# and password_confirmation are the same
 	# read more about it in the documentation
 	# http://datamapper.org/docs/validations.html
-	validates_confirmation_of :password
+	validates_confirmation_of :password, :message => "Sorry, your passwords don't match"
+	# validates_uniqueness_of :email
 
 	# when assigned the password, we don't store it directly
 	# instead, we generate a password digest, that looks like this:
@@ -33,5 +34,16 @@ class User
   		@password = password
   		self.password_digest = BCrypt::Password.create(password)
   	end
+
+  	def self.authenticate(email, password)
+
+  		user = first(:email => email)
+  		if user && BCrypt::Password.new(user.password_digest) == password
+  			user
+  		else
+  			nil
+  		end
+  	end
+  	
 
 end

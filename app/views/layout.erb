@@ -1,6 +1,12 @@
-<body>
-	<% if current_user %>
-	Welcome, <%= current_user.email %>
-	<% end %>
-	<%= yield %>
-</body>
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Bookmark manager</title>
+	</head>
+
+	<body>
+		<%= partial :welcome_message %>
+		<%= partial :flash %>
+		<%= yield %>
+	</body>
+</html>
