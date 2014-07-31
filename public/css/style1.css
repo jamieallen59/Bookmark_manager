@@ -1,0 +1,10 @@
+header {
+	background-color: black;
+	height: 50px;
+	width: 100%;
+}
+
+.sign_up_in {
+	/*float: right;*/
+	display: inline-block;
+}
