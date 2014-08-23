@@ -31,27 +31,26 @@ end
 post '/users/forgot_password' do
 	email = params[:email]
 	user = User.first(email: email)
-	user.password_token = (1..64).map{ ('A'..'Z').to_a.sample }.join
-	user.password_token_timestamp = Time.now
-	user.save
-	send_password email, user.password_token
+	token = create_new_token
+	user.update(password_token: token,
+		        password_token_timestamp: create_new_timestamp)
+	send_password email, token
 	erb :"sessions/check_email"
 end
 
 get '/users/forgot_password/:password_token' do
-	token = params[:password_token]
-	user = User.first(password_token: password_token)
-	erb :reset_password
+	@token = params[:password_token]
+	# user = User.first(password_token: token)
+	erb :"users/reset_password"
 end
 
-post '/users/forgot_password/:password_token' do
+post '/users/reset_password' do
 	password = params[:password]
 	password_confirmation = params[:password_confirmation]
-	user = User.first(:password_token => params[:password_token])
-	user.update(:password => password)
-	user.update(:password_confirmation => password_confirmation)
-	user.save
-	"updated"
+	user = User.first(:password_token => params[:token])
+	user.update(:password => password,
+		        :password_confirmation => password_confirmation)
+	erb :"sessions/new"
 end
 
 def send_password email, token
@@ -65,11 +64,17 @@ end
 
 
 def create_link_with token
-	"https://localhost:9292/users/forgot_password/" + token.to_s
+	"http://localhost:9292/users/forgot_password/" + token.to_s
 end
 
 
+def create_new_token
+	(1..64).map{ ('A'..'Z').to_a.sample }.join
+end
 
+def create_new_timestamp
+	Time.now
+end
 
 
 

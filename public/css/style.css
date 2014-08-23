@@ -8,6 +8,17 @@ body {
 	color: #333333;
 }
 
+html, body {
+	height: 100%;
+}
+
+.wrapper {
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	margin: 0 auto -70px;
+}
+
 a {
 	text-decoration: none;
 	color: #b77843;
@@ -31,18 +42,20 @@ a {
 
 .button.highlighted {
 	background-color: #b77843;
-	margin-top: 10px;
-	margin-left: 20px;
+/*	margin-top: 10px;
+	margin-left: 20px;=========================*/
 }
 
 header {
-	position: fixed;
-	top: 0;
+/*	position: fixed;========================
+	top: 0;*/
 	height: 50px;
 	background-color: black;
 	color: white;
-	margin: auto 0;
-	width: 100%;
+	/*margin: auto 0;=====================*/
+	display: flex;
+/*	width: 100%;=====================*/
+	padding: 0 20px;
 }
 
 	/* every immediate child of head to be vertically centered */
@@ -51,12 +64,14 @@ header {
 	}
 
 	header #logo {
+		display: flex;
+		margin-right: 20px;
 	}
 
 	header a {
 		color: white;
-		margin-left: 40px;
-		font-size: 18px;
+	/*	margin-left: 40px;
+		font-size: 18px;=========================*/
 	}
 
 	header nav {
@@ -70,8 +85,8 @@ header {
 	}
 
 	header nav ul li {
-		list-style: none;
- 		display: inline;
+		list-style-type: none;
+ 		display: inline-block;
 	}
 
 	header #user-links {
@@ -85,7 +100,11 @@ header {
 	}
 
 	header #user-links #welcome-message {
-		font-size: 14px;
+		font-size: 20px;
+	}
+
+	span.welcome-message {
+		font-size: 16px;
 	}
 
 #container {
@@ -118,19 +137,28 @@ header {
 		font-size: 12px;
 	}
 
-#notice {
+.flash {
 	text-align: center;
 	margin: 5px;
 	padding: 5px;
-	background-color: rgba(67,183,120,0.75);
+	/*background-color: rgba(67,183,120,0.75);*/
 	border-radius: 4px;
 	box-shadow: 0 0 3px rgba(0,0,0,0.4);
 	color: white;
 }
 
+	.flash.notice {
+		background-color: rgba(67,183,120,0.75);
+	}
+
+	.flash.error {
+		background-color: rgba(169,29,42,0.75);
+	}
+
 footer {
 	display: flex;
 	background-color: rgba(0,0,0,0.2);
+	height: 70px;
 }
 
 	footer > * {
@@ -144,10 +172,15 @@ footer {
 	footer #technologies {
 		-webkit-flex: 1;
 		flex; 1;
+		font-size: 12px;
 	}
 
 	footer p {
 		padding: 5px 25px;
+	}
+
+	.footer, .push {
+		height: 70px;
 	}
 
 	#sign-up-prompt {
