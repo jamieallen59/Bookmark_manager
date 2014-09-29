@@ -57,9 +57,9 @@ def send_password email, token
 	RestClient.post "https://api:key-48-4tk8wpb9hjja9ty1b0-cmkkglo062"\
 	"@api.mailgun.net/v2/app27948375.mailgun.org/messages",
 	from: 'Excited User <me@app27948375.mailgun.org>',
-    to: email,
-    subject: 'New password',
-    text: create_link_with(token)
+  to: email,
+  subject: 'New password',
+  text: create_link_with(token)
 end
 
 

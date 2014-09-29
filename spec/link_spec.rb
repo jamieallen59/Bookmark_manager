@@ -20,7 +20,7 @@ describe Link do
 			 expect(link.title).to eq("Makers Academy")
 			 # if we want to, we can destroy it
 			 link.destroy
-			 # so now we have no links in teh database
+			 # so now we have no links in the database
 			 expect(Link.count).to eq(0)
 		end
 
