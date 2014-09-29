@@ -1,0 +1,190 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background-image: url(/images/crossword.png);
+	font-family: Helvetica, Arial, Sans-serif;
+	color: #333333;
+}
+
+html, body {
+	height: 100%;
+}
+
+.wrapper {
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	margin: 0 auto -70px;
+}
+
+a {
+	text-decoration: none;
+	color: #b77843;
+}
+
+.button {
+	display: inline-block; /* display inline but have dimensions */
+	width: 110px;
+	cursor: pointer;
+	font-size: 16px;
+	background-color: #82B743;
+	border: 2px solid white;
+	color: white;
+	padding: 5px 10px;
+	text-align: center;
+	border-radius: 4px;
+	margin-left: 5px;
+	margin-right: 5px;
+	text-shadow: 0 0 2px rgba(0,0,0,0.4); /*for readability*/
+}
+
+.button.highlighted {
+	background-color: #b77843;
+/*	margin-top: 10px;
+	margin-left: 20px;=========================*/
+}
+
+header {
+/*	position: fixed;========================
+	top: 0;*/
+	height: 50px;
+	background-color: black;
+	color: white;
+	/*margin: auto 0;=====================*/
+	display: flex;
+/*	width: 100%;=====================*/
+	padding: 0 20px;
+}
+
+	/* every immediate child of head to be vertically centered */
+	header > * {
+		margin: auto 0;
+	}
+
+	header #logo {
+		display: flex;
+		margin-right: 20px;
+	}
+
+	header a {
+		color: white;
+	/*	margin-left: 40px;
+		font-size: 18px;=========================*/
+	}
+
+	header nav {
+		position: fixed;
+		right: 5%;
+		top: 10px;
+	}
+
+	header nav ul {
+		display: inline;
+	}
+
+	header nav ul li {
+		list-style-type: none;
+ 		display: inline-block;
+	}
+
+	header #user-links {
+		flex: 1;
+		-webkit-flex: 1;
+		text-align: right;
+	}
+
+	header #user-links > * {
+		display: inline-block;
+	}
+
+	header #user-links #welcome-message {
+		font-size: 20px;
+	}
+
+	span.welcome-message {
+		font-size: 16px;
+	}
+
+#container {
+	background-color: white;
+	margin: 80px 60px 60px 60px;
+	padding: 10px;
+	box-shadow: 0 0 5px rgba(0,0,0,0.4);
+}
+
+.link {
+	background-color: #EEE; /* same as #EEEEEE */
+	box-shadow: 0 0 5px rgba(0,0,0,0.4);
+	/* 10px for top and bottom, inherit from parent */
+	/* for left and right */
+	margin: 10px inherit;
+	padding: 15px 10px;
+}
+
+	.link a.title {
+		/* to make it slightly more prominent */
+		letter-spacing: 1px;
+	}
+
+	.link .description {
+		margin: 10px inherit;
+	}
+
+	.link .source {
+		float: right;
+		font-size: 12px;
+	}
+
+.flash {
+	text-align: center;
+	margin: 5px;
+	padding: 5px;
+	/*background-color: rgba(67,183,120,0.75);*/
+	border-radius: 4px;
+	box-shadow: 0 0 3px rgba(0,0,0,0.4);
+	color: white;
+}
+
+	.flash.notice {
+		background-color: rgba(67,183,120,0.75);
+	}
+
+	.flash.error {
+		background-color: rgba(169,29,42,0.75);
+	}
+
+footer {
+	display: flex;
+	background-color: rgba(0,0,0,0.2);
+	height: 70px;
+}
+
+	footer > * {
+		margin: auto inherit;
+	}
+
+	footer img {
+		vertical-align: top;
+	}
+
+	footer #technologies {
+		-webkit-flex: 1;
+		flex; 1;
+		font-size: 12px;
+	}
+
+	footer p {
+		padding: 5px 25px;
+	}
+
+	.footer, .push {
+		height: 70px;
+	}
+
+	#sign-up-prompt {
+		font-size: 20px;
+	}
+
+

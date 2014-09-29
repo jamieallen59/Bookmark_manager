@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+			<title>Bookmark Manager</title>
+		<link href="/css/reset.css" rel="stylesheet" type="text/css">
+		<link href="/css/style.css" rel="stylesheet" type="text/css">
+	</head>
+
+	<body>
+		<div class="wrapper">
+			<%= partial :header %>
+			<%= partial :flash %>
+			<div id="container">
+				<%= yield %>
+			</div>
+			<div class="push"></div>
+		</div>
+			<div class="footer">
+			<%= partial :footer %>
+			</div>
+	</body>
+</html>
