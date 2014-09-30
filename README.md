@@ -1,7 +1,7 @@
 Bookmark_manager
 ================
 
-We are going to build a bookmark manager, similar to pineapple.io or delicious.com in spirit. This is where we explored relational databases and using the Mailgun API.
+We built a bookmark manager, similar to pineapple.io or delicious.com, mainly as a way to explore relational databases and use the Mailgun API.
 
 ![](public/images/screenshot.png)
 
