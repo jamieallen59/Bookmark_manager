@@ -16,3 +16,17 @@ The website will has the following functionality:
 - Add new links
 - Add tags to the links
 - Filter the links by a tag
+
+###Take a look at the code
+```sh
+git clone git@github.com:jamieallen59/Bookmark_manager.git
+cd Bookmark_manager
+```
+
+open the file with your text editor e.g. "subl ." (for Sublime Text)
+
+###Run the tests
+```sh
+cd Bookmark_manager
+rspec
+```
